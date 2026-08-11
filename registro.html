@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registro | NexaVision</title>
+
+<link rel="stylesheet" href="css/estilos1.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+    margin:0;
+    font-family:'Poppins',sans-serif;
+    background:
+    radial-gradient(circle at top,#2563EB22,transparent 35%),
+    radial-gradient(circle at bottom,#00C85322,transparent 35%),
+    #0A2540;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+.registro{
+
+    width:480px;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    backdrop-filter:blur(15px);
+    border-radius:20px;
+    padding:40px;
+    color:white;
+
+}
+
+.registro img{
+
+    width:100px;
+    display:block;
+    margin:auto;
+
+}
+
+.registro h2{
+
+    text-align:center;
+    color:#00C853;
+    margin:20px 0 35px;
+
+}
+
+input{
+
+    width:100%;
+    padding:15px;
+    margin-bottom:18px;
+    border:none;
+    border-radius:10px;
+    background:#132c47;
+    color:white;
+    font-size:15px;
+
+}
+
+input:focus{
+
+    outline:2px solid #00C853;
+
+}
+
+.telefono{
+
+    display:flex;
+    margin-bottom:18px;
+
+}
+
+.telefono span{
+
+    background:#081b30;
+    color:#00C853;
+    padding:15px 18px;
+    border-radius:10px 0 0 10px;
+    font-weight:bold;
+
+}
+
+.telefono input{
+
+    margin:0;
+    border-radius:0 10px 10px 0;
+
+}
+
+.camara{
+
+    background:#132c47;
+    border:2px dashed #00C853;
+    border-radius:15px;
+    padding:25px;
+    text-align:center;
+    margin-bottom:20px;
+
+}
+
+.camara p{
+
+    color:#ccc;
+
+}
+
+button{
+
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:50px;
+    background:#00C853;
+    color:white;
+    font-size:17px;
+    cursor:pointer;
+    transition:.3s;
+
+}
+
+button:hover{
+
+    background:#2563EB;
+
+}
+
+.login{
+
+    text-align:center;
+    margin-top:20px;
+
+}
+
+.login a{
+
+    color:#00C853;
+    text-decoration:none;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="registro">
+
+    <img src="logo2.png">
+
+    <h2>Crear Cuenta</h2>
+
+    <form action="http://127.0.0.1:8000/registro" method="POST">
+
+        <input
+        type="text"
+        name="nombre"
+        placeholder="Nombre"
+        required>
+
+        <input
+        type="text"
+        name="apellido"
+        placeholder="Apellidos"
+        required>
+
+        <input
+        type="email"
+        name="correo"
+        placeholder="Correo electrónico"
+        required>
+
+        <div class="telefono">
+
+            <span>+56</span>
+
+            <input
+            type="tel"
+            name="telefono"
+            placeholder="912345678"
+            maxlength="9"
+            required>
+
+        </div>
+
+        <input
+        type="password"
+        name="clave"
+        placeholder="Contraseña"
+        required>
+
+        <input
+        type="password"
+        name="confirmar"
+        placeholder="Confirmar contraseña"
+        required>
+
+        <div class="camara">
+
+            <h3>Captura Facial</h3>
+
+            <p>
+                Al presionar el botón, FastAPI abrirá la cámara
+                utilizando OpenCV para registrar tu rostro.
+            </p>
+
+            <button type="button">
+                📷 Capturar Rostro
+            </button>
+
+        </div>
+
+        <button type="submit">
+            Registrarse
+        </button>
+
+    </form>
+
+    <div class="login">
+
+        ¿Ya tienes cuenta?
+
+        <a href="login.html">
+            Iniciar sesión
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>
