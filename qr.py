@@ -15,10 +15,10 @@ qr.make(fit=True)
 
 img = qr.make_image(
     image_factory=PilImage,
-    fill_color="#00C853",
-    back_color="#0A2540"
+    fill_color="#000000",
+    back_color="#FFFFFF"
 )
 
-img.save("qrnexa.png")
+img.save("qrnexabla.png")
 
 print("QR creado correctamente")
