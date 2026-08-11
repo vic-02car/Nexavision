@@ -2111,3 +2111,58 @@ section{
     }
 
 }
+@media screen and (max-width: 768px) {
+
+    header {
+        z-index: 9999;
+    }
+
+    .navbar {
+        position: relative;
+        z-index: 10000;
+    }
+
+    .menu {
+        display: none;
+
+        position: fixed;
+
+        top: 75px;
+        left: 0;
+
+        width: 100%;
+
+        background: #081b30;
+
+        padding: 20px;
+
+        flex-direction: column;
+
+        gap: 0;
+
+        z-index: 99999;
+
+        box-shadow: 0 15px 30px rgba(0,0,0,.5);
+    }
+
+    .menu.activo {
+        display: flex;
+    }
+
+    .menu li {
+        width: 100%;
+    }
+
+    .menu a {
+        display: block;
+
+        padding: 18px;
+
+        text-align: center;
+
+        font-size: 17px;
+
+        border-bottom: 1px solid rgba(255,255,255,.1);
+    }
+
+}
