@@ -1507,3 +1507,492 @@ section{
     box-shadow: 0 0 12px var(--verde);
     transition: width .1s;
 }
+/* ==================================================
+        RESPONSIVE NEXAVISION - TELÉFONOS
+================================================== */
+
+@media screen and (max-width: 768px) {
+
+    /* ---------- GENERAL ---------- */
+
+    body {
+        overflow-x: hidden;
+    }
+
+    section {
+        width: 100%;
+    }
+
+
+    /* ---------- HEADER ---------- */
+
+    header {
+        position: fixed;
+        width: 100%;
+    }
+
+    .navbar {
+        width: 100%;
+        height: 75px;
+        padding: 0 20px;
+
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo img {
+        width: 75px;
+    }
+
+    /*
+       Ocultamos temporalmente los enlaces del menú
+       porque en móvil ocupan demasiado espacio.
+    */
+    .menu {
+        display: none;
+    }
+
+    .btn-nav {
+        padding: 10px 18px;
+        font-size: 14px;
+    }
+
+
+    /* ---------- HERO ---------- */
+
+    .hero {
+        min-height: auto;
+
+        flex-direction: column;
+
+        padding: 120px 20px 60px;
+
+        text-align: center;
+    }
+
+    .hero-texto {
+        width: 100%;
+    }
+
+    .subtitulo {
+        display: block;
+
+        font-size: 12px;
+        line-height: 22px;
+
+        letter-spacing: 2px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+        line-height: 1.15;
+
+        margin: 20px 0;
+    }
+
+    .hero p {
+        font-size: 15px;
+        line-height: 27px;
+
+        margin-bottom: 30px;
+    }
+
+
+    /* ---------- BOTONES HERO ---------- */
+
+    .hero-botones {
+        width: 100%;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 15px;
+    }
+
+    .btn-principal,
+    .btn-secundario {
+        width: 100%;
+        max-width: 320px;
+
+        text-align: center;
+    }
+
+
+    /* ---------- IMAGEN HERO ---------- */
+
+    .hero-imagen {
+        width: 100%;
+
+        margin-top: 45px;
+    }
+
+    .hero-imagen img {
+        width: 230px;
+        max-width: 80%;
+    }
+
+
+    /* ---------- SLIDER LOGOS ---------- */
+
+    .tecnologias-slider {
+        padding: 18px 0;
+    }
+
+    .slide img {
+        width: 50px;
+        height: 50px;
+
+        margin: 0 25px;
+    }
+
+    .tecnologias-slider::before,
+    .tecnologias-slider::after {
+        width: 40px;
+    }
+
+
+    /* ---------- INFORMACIÓN ---------- */
+
+    .informacion {
+        width: 90%;
+
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+
+        margin: 50px auto;
+    }
+
+    .info-card {
+        padding: 30px 20px;
+    }
+
+    .info-card i {
+        font-size: 45px;
+    }
+
+    .info-card h3 {
+        font-size: 21px;
+    }
+
+
+    /* ---------- TÍTULOS ---------- */
+
+    .titulo-seccion {
+        width: 100%;
+        margin-bottom: 45px;
+    }
+
+    .titulo-seccion span {
+        font-size: 13px;
+        letter-spacing: 2px;
+    }
+
+    .titulo-seccion h2 {
+        font-size: 31px;
+        line-height: 1.25;
+    }
+
+    .titulo-seccion p {
+        font-size: 15px;
+        line-height: 27px;
+    }
+
+
+    /* ---------- NOSOTROS ---------- */
+
+    .nosotros {
+        padding: 70px 20px;
+    }
+
+    .contenido {
+        flex-direction: column;
+
+        gap: 40px;
+    }
+
+    .texto {
+        width: 100%;
+
+        text-align: center;
+    }
+
+    .texto h2 {
+        font-size: 32px;
+    }
+
+    .texto p {
+        font-size: 15px;
+        line-height: 28px;
+    }
+
+    .imagen {
+        width: 100%;
+    }
+
+    .imagen img {
+        width: 230px;
+        max-width: 90%;
+    }
+
+
+    /* ---------- SERVICIOS ---------- */
+
+    .servicios {
+        padding: 70px 20px;
+    }
+
+    .contenedor-servicios {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+    .card-servicio {
+        padding: 35px 25px;
+    }
+
+    .card-servicio i {
+        font-size: 50px;
+    }
+
+    .card-servicio h3 {
+        font-size: 23px;
+    }
+
+
+    /* ---------- FUNCIONAMIENTO ---------- */
+
+    .funcionamiento {
+        padding: 70px 20px;
+    }
+
+    .timeline {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+    .paso {
+        padding: 35px 25px;
+    }
+
+    .numero {
+        width: 60px;
+        height: 60px;
+
+        font-size: 23px;
+    }
+
+
+    /* ---------- TECNOLOGÍAS ---------- */
+
+    .tecnologias {
+        padding: 70px 20px;
+    }
+
+    .contenedor-tecnologias {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 15px;
+    }
+
+    .tecnologia {
+        width: 100%;
+        height: 190px;
+    }
+
+    .card-front,
+    .card-back {
+        padding: 15px;
+    }
+
+    .card-front i {
+        font-size: 45px;
+    }
+
+    .card-front h3 {
+        font-size: 20px;
+    }
+
+    .card-back h3 {
+        font-size: 18px;
+    }
+
+    .card-back p {
+        font-size: 12px;
+        line-height: 19px;
+    }
+
+
+    /* ---------- ESTADÍSTICAS ---------- */
+
+    .estadisticas {
+        margin-top: 40px;
+
+        padding: 60px 20px;
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 35px 15px;
+    }
+
+    .estadistica h2 {
+        font-size: 37px;
+    }
+
+    .estadistica p {
+        font-size: 14px;
+    }
+
+
+    /* ---------- EQUIPO ---------- */
+
+    .equipo {
+        padding: 70px 20px;
+    }
+
+    .contenedor-equipo {
+        grid-template-columns: 1fr;
+    }
+
+    .miembro {
+        padding: 30px 20px;
+    }
+
+    .miembro img {
+        width: 140px;
+        height: 140px;
+    }
+
+
+    /* ---------- TESTIMONIOS ---------- */
+
+    .testimonios {
+        padding: 70px 20px;
+    }
+
+    .contenedor-testimonios {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+    .testimonio {
+        padding: 30px 25px;
+    }
+
+
+    /* ---------- FAQ ---------- */
+
+    .faq {
+        padding: 70px 20px;
+    }
+
+    .pregunta {
+        padding: 25px 20px;
+    }
+
+    .pregunta:hover {
+        transform: none;
+    }
+
+    .pregunta h3 {
+        font-size: 19px;
+    }
+
+
+    /* ---------- CONTACTO ---------- */
+
+    .contacto {
+        padding: 70px 20px;
+    }
+
+    form {
+        width: 100%;
+    }
+
+    input,
+    textarea {
+        width: 100%;
+
+        font-size: 16px;
+    }
+
+
+    /* ---------- FOOTER ---------- */
+
+    footer {
+        margin-top: 50px;
+    }
+
+    .footer-contenedor {
+        width: 90%;
+
+        grid-template-columns: 1fr;
+
+        text-align: center;
+
+        gap: 45px;
+
+        padding: 50px 0;
+    }
+
+    .footer-logo img {
+        width: 100px;
+    }
+
+    .footer-redes {
+        text-align: center;
+    }
+
+
+    /* ---------- COPYRIGHT ---------- */
+
+    .copyright {
+        padding: 20px;
+
+        font-size: 13px;
+    }
+}
+
+
+/* ==================================================
+        TELÉFONOS PEQUEÑOS
+================================================== */
+
+@media screen and (max-width: 420px) {
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .hero-imagen img {
+        width: 200px;
+    }
+
+    .titulo-seccion h2 {
+        font-size: 27px;
+    }
+
+    .contenedor-tecnologias {
+        grid-template-columns: 1fr;
+    }
+
+    .tecnologia {
+        max-width: 280px;
+        height: 210px;
+
+        margin: auto;
+    }
+
+    .estadisticas {
+        grid-template-columns: 1fr;
+    }
+}
