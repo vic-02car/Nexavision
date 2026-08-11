@@ -1996,3 +1996,118 @@ section{
         grid-template-columns: 1fr;
     }
 }
+/* =========================
+       MENÚ HAMBURGUESA
+========================= */
+
+.nav-derecha {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.menu-toggle {
+    display: none;
+
+    width: 48px;
+    height: 48px;
+
+    padding: 0;
+
+    border-radius: 12px;
+
+    background: transparent;
+    border: 2px solid var(--verde);
+
+    color: white;
+    font-size: 23px;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+          MÓVIL
+========================= */
+
+@media screen and (max-width: 768px) {
+
+    .navbar {
+        position: relative;
+    }
+
+    .menu-toggle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .menu {
+        display: none;
+
+        position: absolute;
+
+        top: 75px;
+        left: 0;
+
+        width: 100%;
+
+        padding: 25px;
+
+        background: #081b30;
+
+        flex-direction: column;
+
+        gap: 0;
+
+        border-top: 1px solid rgba(255,255,255,.08);
+
+        box-shadow: 0 15px 30px rgba(0,0,0,.35);
+    }
+
+    .menu.activo {
+        display: flex;
+    }
+
+    .menu li {
+        width: 100%;
+        list-style: none;
+    }
+
+    .menu a {
+        display: block;
+
+        width: 100%;
+
+        padding: 15px 5px;
+
+        text-align: center;
+
+        border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+
+    .btn-nav {
+        padding: 10px 15px;
+        font-size: 13px;
+    }
+}
+
+
+@media screen and (max-width: 420px) {
+
+    .logo img {
+        width: 70px;
+    }
+
+    .btn-nav {
+        padding: 9px 12px;
+        font-size: 12px;
+    }
+
+    .menu-toggle {
+        width: 43px;
+        height: 43px;
+        font-size: 20px;
+    }
+
+}

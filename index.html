@@ -948,6 +948,46 @@
 
     });
     </script>
+    <script>
+
+    const menuToggle = document.getElementById("menu-toggle");
+    const menu = document.getElementById("menu");
+
+    menuToggle.addEventListener("click", () => {
+
+        menu.classList.toggle("activo");
+
+        const icono = menuToggle.querySelector("i");
+
+        if (menu.classList.contains("activo")) {
+            icono.classList.remove("fa-bars");
+            icono.classList.add("fa-xmark");
+        } else {
+            icono.classList.remove("fa-xmark");
+            icono.classList.add("fa-bars");
+        }
+
+    });
+
+
+    /* Cerrar el menú después de seleccionar una opción */
+
+    document.querySelectorAll(".menu a").forEach(enlace => {
+
+        enlace.addEventListener("click", () => {
+
+            menu.classList.remove("activo");
+
+            const icono = menuToggle.querySelector("i");
+
+            icono.classList.remove("fa-xmark");
+            icono.classList.add("fa-bars");
+
+        });
+
+    });
+
+</script>
 
 </body>
 
