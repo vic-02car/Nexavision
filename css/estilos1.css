@@ -864,14 +864,28 @@ header{
 
 }
 
-.contenedor-equipo{
+.contenedor-equipo {
+    max-width: 1200px;
+    margin: 50px auto 0;
 
-    display:grid;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 40px;
+}
 
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+/* Cada tarjeta ocupa 2 columnas = 3 tarjetas arriba */
+.contenedor-equipo .miembro {
+    grid-column: span 2;
+}
 
-    gap:40px;
+/* Felipe: segunda fila, centrado hacia la izquierda */
+.contenedor-equipo .miembro:nth-child(4) {
+    grid-column: 2 / span 2;
+}
 
+/* Benjamín: segunda fila, centrado hacia la derecha */
+.contenedor-equipo .miembro:nth-child(5) {
+    grid-column: 4 / span 2;
 }
 
 .miembro{
