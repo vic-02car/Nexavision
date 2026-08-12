@@ -2180,3 +2180,18 @@ section{
     }
 
 }
+@media (max-width: 768px) {
+
+    .contenedor-equipo {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 0 20px;
+    }
+
+    .contenedor-equipo .miembro,
+    .contenedor-equipo .miembro:nth-child(4),
+    .contenedor-equipo .miembro:nth-child(5) {
+        grid-column: 1;
+    }
+}
