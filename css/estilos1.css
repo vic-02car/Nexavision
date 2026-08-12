@@ -707,14 +707,33 @@ header{
 
 }
 
-.contenedor-tecnologias{
+.contenedor-tecnologias {
+    max-width: 1200px;
+    margin: 50px auto 0;
 
-    display:grid;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 25px;
+}
 
-    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+/* Primeras 4 tarjetas */
+.contenedor-tecnologias .tecnologia {
+    grid-column: span 2;
+}
 
-    gap:30px;
+/* HTML5 */
+.contenedor-tecnologias .tecnologia:nth-child(5) {
+    grid-column: 2 / span 2;
+}
 
+/* CSS3 */
+.contenedor-tecnologias .tecnologia:nth-child(6) {
+    grid-column: 4 / span 2;
+}
+
+/* JavaScript */
+.contenedor-tecnologias .tecnologia:nth-child(7) {
+    grid-column: 6 / span 2;
 }
 
 .tecnologia{
@@ -2193,5 +2212,28 @@ section{
     .contenedor-equipo .miembro:nth-child(4),
     .contenedor-equipo .miembro:nth-child(5) {
         grid-column: 1;
+    }
+}
+@media (max-width: 768px) {
+
+    .contenedor-tecnologias {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        padding: 0 20px;
+    }
+
+    .contenedor-tecnologias .tecnologia,
+    .contenedor-tecnologias .tecnologia:nth-child(5),
+    .contenedor-tecnologias .tecnologia:nth-child(6),
+    .contenedor-tecnologias .tecnologia:nth-child(7) {
+        grid-column: auto;
+    }
+
+    /* JavaScript centrado al final */
+    .contenedor-tecnologias .tecnologia:nth-child(7) {
+        grid-column: 1 / 3;
+        width: calc(50% - 8px);
+        justify-self: center;
     }
 }
