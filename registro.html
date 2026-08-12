@@ -1,236 +1,1403 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Registro | NexaVision</title>
 
-<link rel="stylesheet" href="css/estilos1.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
 
-<style>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-body{
-    margin:0;
-    font-family:'Poppins',sans-serif;
-    background:
-    radial-gradient(circle at top,#2563EB22,transparent 35%),
-    radial-gradient(circle at bottom,#00C85322,transparent 35%),
-    #0A2540;
+    <title>Registro | NexaVision</title>
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    min-height:100vh;
-}
+    <link rel="stylesheet" href="css/estilos1.css">
 
-.registro{
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
 
-    width:480px;
-    background:rgba(255,255,255,.05);
-    border:1px solid rgba(255,255,255,.08);
-    backdrop-filter:blur(15px);
-    border-radius:20px;
-    padding:40px;
-    color:white;
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
 
-}
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
 
-.registro img{
 
-    width:100px;
-    display:block;
-    margin:auto;
+    <style>
 
-}
+        * {
 
-.registro h2{
+            box-sizing: border-box;
 
-    text-align:center;
-    color:#00C853;
-    margin:20px 0 35px;
+        }
 
-}
 
-input{
+        body {
 
-    width:100%;
-    padding:15px;
-    margin-bottom:18px;
-    border:none;
-    border-radius:10px;
-    background:#132c47;
-    color:white;
-    font-size:15px;
+            margin: 0;
 
-}
+            font-family: 'Poppins', sans-serif;
 
-input:focus{
+            background:
+                radial-gradient(
+                    circle at top,
+                    #2563EB22,
+                    transparent 35%
+                ),
+                radial-gradient(
+                    circle at bottom,
+                    #00C85322,
+                    transparent 35%
+                ),
+                #0A2540;
 
-    outline:2px solid #00C853;
+            min-height: 100vh;
 
-}
+            display: flex;
 
-.telefono{
+            justify-content: center;
 
-    display:flex;
-    margin-bottom:18px;
+            align-items: center;
 
-}
+            padding: 40px 20px;
 
-.telefono span{
+            color: white;
 
-    background:#081b30;
-    color:#00C853;
-    padding:15px 18px;
-    border-radius:10px 0 0 10px;
-    font-weight:bold;
+        }
 
-}
 
-.telefono input{
+        /* =========================
+                REGISTRO
+        ========================= */
 
-    margin:0;
-    border-radius:0 10px 10px 0;
+        .registro {
 
-}
+            width: 100%;
 
-.camara{
+            max-width: 520px;
 
-    background:#132c47;
-    border:2px dashed #00C853;
-    border-radius:15px;
-    padding:25px;
-    text-align:center;
-    margin-bottom:20px;
+            background: rgba(255,255,255,.05);
 
-}
+            border: 1px solid rgba(255,255,255,.08);
 
-.camara p{
+            backdrop-filter: blur(15px);
 
-    color:#ccc;
+            border-radius: 25px;
 
-}
+            padding: 40px;
 
-button{
+            box-shadow:
+                0 20px 60px rgba(0,0,0,.25);
 
-    width:100%;
-    padding:15px;
-    border:none;
-    border-radius:50px;
-    background:#00C853;
-    color:white;
-    font-size:17px;
-    cursor:pointer;
-    transition:.3s;
+        }
 
-}
 
-button:hover{
+        .logo {
 
-    background:#2563EB;
+            width: 110px;
 
-}
+            display: block;
 
-.login{
+            margin: auto;
 
-    text-align:center;
-    margin-top:20px;
+        }
 
-}
 
-.login a{
+        .registro h2 {
 
-    color:#00C853;
-    text-decoration:none;
+            text-align: center;
 
-}
+            color: #00C853;
 
-</style>
+            margin: 20px 0 5px;
+
+        }
+
+
+        .descripcion {
+
+            text-align: center;
+
+            color: #bfc8d2;
+
+            margin-bottom: 30px;
+
+            font-size: 14px;
+
+        }
+
+
+        /* =========================
+                  INPUTS
+        ========================= */
+
+        .campo {
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .campo label {
+
+            display: block;
+
+            margin-bottom: 7px;
+
+            font-size: 14px;
+
+            color: #d7dce2;
+
+        }
+
+
+        input {
+
+            width: 100%;
+
+            padding: 15px;
+
+            border: 1px solid transparent;
+
+            border-radius: 10px;
+
+            background: #132c47;
+
+            color: white;
+
+            font-family: inherit;
+
+            font-size: 15px;
+
+            transition: .3s;
+
+        }
+
+
+        input:focus {
+
+            outline: none;
+
+            border-color: #00C853;
+
+            box-shadow:
+                0 0 0 3px rgba(0,200,83,.12);
+
+        }
+
+
+        input::placeholder {
+
+            color: #8f9cac;
+
+        }
+
+
+        /* =========================
+                  TELÉFONO
+        ========================= */
+
+        .telefono {
+
+            display: flex;
+
+        }
+
+
+        .telefono span {
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            padding: 0 17px;
+
+            background: #081b30;
+
+            color: #00C853;
+
+            font-weight: 600;
+
+            border-radius: 10px 0 0 10px;
+
+        }
+
+
+        .telefono input {
+
+            border-radius: 0 10px 10px 0;
+
+        }
+
+
+        /* =========================
+                   CÁMARA
+        ========================= */
+
+        .camara {
+
+            margin-top: 30px;
+
+            background: #0d233a;
+
+            border: 2px dashed #00C853;
+
+            border-radius: 18px;
+
+            padding: 20px;
+
+            text-align: center;
+
+        }
+
+
+        .camara h3 {
+
+            margin-top: 0;
+
+            margin-bottom: 5px;
+
+        }
+
+
+        .camara-texto {
+
+            color: #aeb9c5;
+
+            font-size: 13px;
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .video-contenedor {
+
+            width: 100%;
+
+            position: relative;
+
+            overflow: hidden;
+
+            border-radius: 15px;
+
+            background: #06192b;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        video {
+
+            display: block;
+
+            width: 100%;
+
+            aspect-ratio: 4 / 3;
+
+            object-fit: cover;
+
+            transform: scaleX(-1);
+
+        }
+
+
+        #fotoPreview {
+
+            display: none;
+
+            width: 100%;
+
+            aspect-ratio: 4 / 3;
+
+            object-fit: cover;
+
+        }
+
+
+        canvas {
+
+            display: none;
+
+        }
+
+
+        .estado-camara {
+
+            margin: 12px 0;
+
+            font-size: 13px;
+
+            color: #b8c5d1;
+
+        }
+
+
+        .estado-camara.correcto {
+
+            color: #00C853;
+
+        }
+
+
+        .estado-camara.error {
+
+            color: #ff5b5b;
+
+        }
+
+
+        /* =========================
+                  BOTONES
+        ========================= */
+
+        button {
+
+            width: 100%;
+
+            padding: 15px;
+
+            border: none;
+
+            border-radius: 50px;
+
+            background: #00C853;
+
+            color: white;
+
+            font-family: inherit;
+
+            font-size: 16px;
+
+            font-weight: 500;
+
+            cursor: pointer;
+
+            transition: .3s;
+
+        }
+
+
+        button:hover {
+
+            background: #2563EB;
+
+            transform: translateY(-2px);
+
+        }
+
+
+        button:disabled {
+
+            opacity: .5;
+
+            cursor: not-allowed;
+
+            transform: none;
+
+        }
+
+
+        .botones-camara {
+
+            display: flex;
+
+            gap: 10px;
+
+        }
+
+
+        .btn-secundario {
+
+            background: transparent;
+
+            border: 2px solid #00C853;
+
+        }
+
+
+        .btn-secundario:hover {
+
+            background: #00C853;
+
+        }
+
+
+        .btn-registrar {
+
+            margin-top: 25px;
+
+        }
+
+
+        /* =========================
+                  MENSAJE
+        ========================= */
+
+        #mensaje {
+
+            display: none;
+
+            margin-top: 20px;
+
+            padding: 14px;
+
+            border-radius: 10px;
+
+            text-align: center;
+
+            font-size: 14px;
+
+        }
+
+
+        #mensaje.error {
+
+            display: block;
+
+            background: rgba(255,77,77,.12);
+
+            border: 1px solid #ff5656;
+
+            color: #ff9a9a;
+
+        }
+
+
+        #mensaje.exito {
+
+            display: block;
+
+            background: rgba(0,200,83,.12);
+
+            border: 1px solid #00C853;
+
+            color: #73ef9e;
+
+        }
+
+
+        /* =========================
+                   LOGIN
+        ========================= */
+
+        .login {
+
+            text-align: center;
+
+            margin-top: 25px;
+
+            color: #cbd3dc;
+
+        }
+
+
+        .login a {
+
+            color: #00C853;
+
+            text-decoration: none;
+
+        }
+
+
+        .volver {
+
+            display: block;
+
+            text-align: center;
+
+            margin-top: 15px;
+
+            color: #9dabba;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+        }
+
+
+        /* =========================
+                 RESPONSIVE
+        ========================= */
+
+        @media(max-width: 600px) {
+
+            body {
+
+                padding: 20px 12px;
+
+            }
+
+
+            .registro {
+
+                padding: 28px 20px;
+
+            }
+
+
+            .botones-camara {
+
+                flex-direction: column;
+
+            }
+
+        }
+
+    </style>
 
 </head>
 
+
 <body>
+
 
 <div class="registro">
 
-    <img src="logo2.png">
+
+    <img
+        src="logo2.png"
+        alt="NexaVision"
+        class="logo"
+    >
+
 
     <h2>Crear Cuenta</h2>
 
-    <form action="http://127.0.0.1:8000/registro" method="POST">
 
-        <input
-        type="text"
-        name="nombre"
-        placeholder="Nombre"
-        required>
+    <p class="descripcion">
 
-        <input
-        type="text"
-        name="apellido"
-        placeholder="Apellidos"
-        required>
+        Registra tus datos y realiza una captura facial
+        para completar tu identificación.
 
-        <input
-        type="email"
-        name="correo"
-        placeholder="Correo electrónico"
-        required>
+    </p>
 
-        <div class="telefono">
 
-            <span>+56</span>
+    <form id="formRegistro">
+
+
+        <!-- NOMBRE -->
+
+        <div class="campo">
+
+            <label for="nombre">
+
+                Nombre
+
+            </label>
 
             <input
-            type="tel"
-            name="telefono"
-            placeholder="912345678"
-            maxlength="9"
-            required>
+                id="nombre"
+                type="text"
+                name="nombre"
+                placeholder="Nombre"
+                required
+            >
 
         </div>
 
-        <input
-        type="password"
-        name="clave"
-        placeholder="Contraseña"
-        required>
 
-        <input
-        type="password"
-        name="confirmar"
-        placeholder="Confirmar contraseña"
-        required>
+        <!-- APELLIDOS -->
+
+        <div class="campo">
+
+            <label for="apellido">
+
+                Apellidos
+
+            </label>
+
+            <input
+                id="apellido"
+                type="text"
+                name="apellido"
+                placeholder="Apellidos"
+                required
+            >
+
+        </div>
+
+
+        <!-- CORREO -->
+
+        <div class="campo">
+
+            <label for="correo">
+
+                Correo electrónico
+
+            </label>
+
+            <input
+                id="correo"
+                type="email"
+                name="correo"
+                placeholder="correo@ejemplo.com"
+                required
+            >
+
+        </div>
+
+
+        <!-- TELÉFONO -->
+
+        <div class="campo">
+
+            <label for="telefono">
+
+                Teléfono
+
+            </label>
+
+
+            <div class="telefono">
+
+                <span>
+
+                    +56
+
+                </span>
+
+
+                <input
+                    id="telefono"
+                    type="tel"
+                    name="telefono"
+                    placeholder="912345678"
+                    maxlength="9"
+                    pattern="[0-9]{9}"
+                    required
+                >
+
+            </div>
+
+        </div>
+
+
+        <!-- CONTRASEÑA -->
+
+        <div class="campo">
+
+            <label for="clave">
+
+                Contraseña
+
+            </label>
+
+            <input
+                id="clave"
+                type="password"
+                name="clave"
+                placeholder="Contraseña"
+                minlength="6"
+                required
+            >
+
+        </div>
+
+
+        <!-- CONFIRMAR -->
+
+        <div class="campo">
+
+            <label for="confirmar">
+
+                Confirmar contraseña
+
+            </label>
+
+            <input
+                id="confirmar"
+                type="password"
+                name="confirmar"
+                placeholder="Repite tu contraseña"
+                minlength="6"
+                required
+            >
+
+        </div>
+
+
+        <!-- ======================
+                 CÁMARA
+        ======================= -->
 
         <div class="camara">
 
-            <h3>Captura Facial</h3>
 
-            <button type="button">
-                📷 Capturar Rostro
-            </button>
+            <h3>
+
+                <i class="fa-solid fa-camera"></i>
+
+                Captura Facial
+
+            </h3>
+
+
+            <p class="camara-texto">
+
+                Mira directamente a la cámara y asegúrate
+                de tener buena iluminación.
+
+            </p>
+
+
+            <div class="video-contenedor">
+
+
+                <video
+                    id="video"
+                    autoplay
+                    playsinline
+                    muted
+                ></video>
+
+
+                <img
+                    id="fotoPreview"
+                    alt="Fotografía capturada"
+                >
+
+
+            </div>
+
+
+            <canvas
+                id="canvas"
+                width="640"
+                height="480"
+            ></canvas>
+
+
+            <div class="botones-camara">
+
+
+                <button
+                    type="button"
+                    id="btnCamara"
+                    class="btn-secundario"
+                >
+
+                    <i class="fa-solid fa-video"></i>
+
+                    Activar cámara
+
+                </button>
+
+
+                <button
+                    type="button"
+                    id="btnCapturar"
+                    disabled
+                >
+
+                    <i class="fa-solid fa-camera"></i>
+
+                    Capturar
+
+                </button>
+
+
+            </div>
+
+
+            <p
+                id="estadoCamara"
+                class="estado-camara"
+            >
+
+                Cámara desactivada
+
+            </p>
+
 
         </div>
 
-        <button type="submit">
+
+        <div id="mensaje"></div>
+
+
+        <button
+            type="submit"
+            id="btnRegistrar"
+            class="btn-registrar"
+        >
+
+            <i class="fa-solid fa-user-plus"></i>
+
             Registrarse
+
         </button>
 
+
     </form>
+
 
     <div class="login">
 
         ¿Ya tienes cuenta?
 
         <a href="login.html">
+
             Iniciar sesión
+
         </a>
 
     </div>
 
+
+    <a
+        href="index.html"
+        class="volver"
+    >
+
+        ← Volver a NexaVision
+
+    </a>
+
+
 </div>
 
+
+
+<script>
+
+
+/* ==================================
+       ELEMENTOS DEL DOCUMENTO
+================================== */
+
+
+const form = document.getElementById("formRegistro");
+
+const video = document.getElementById("video");
+
+const canvas = document.getElementById("canvas");
+
+const fotoPreview =
+    document.getElementById("fotoPreview");
+
+const btnCamara =
+    document.getElementById("btnCamara");
+
+const btnCapturar =
+    document.getElementById("btnCapturar");
+
+const btnRegistrar =
+    document.getElementById("btnRegistrar");
+
+const estadoCamara =
+    document.getElementById("estadoCamara");
+
+const mensaje =
+    document.getElementById("mensaje");
+
+
+let stream = null;
+
+let fotoBlob = null;
+
+
+
+/* ==================================
+          ACTIVAR CÁMARA
+================================== */
+
+
+btnCamara.addEventListener(
+    "click",
+    async () => {
+
+        try {
+
+            stream =
+                await navigator.mediaDevices.getUserMedia({
+
+                    video: {
+
+                        facingMode: "user",
+
+                        width: {
+                            ideal: 640
+                        },
+
+                        height: {
+                            ideal: 480
+                        }
+
+                    },
+
+                    audio: false
+
+                });
+
+
+            video.srcObject = stream;
+
+
+            video.style.display = "block";
+
+            fotoPreview.style.display = "none";
+
+
+            btnCapturar.disabled = false;
+
+
+            estadoCamara.textContent =
+                "Cámara activa. Mira al frente.";
+
+
+            estadoCamara.className =
+                "estado-camara correcto";
+
+
+        }
+
+        catch(error) {
+
+            console.error(error);
+
+
+            estadoCamara.textContent =
+                "No fue posible acceder a la cámara.";
+
+
+            estadoCamara.className =
+                "estado-camara error";
+
+        }
+
+    }
+);
+
+
+
+/* ==================================
+           CAPTURAR FOTO
+================================== */
+
+
+btnCapturar.addEventListener(
+    "click",
+    () => {
+
+
+        if (!stream) {
+
+            return;
+
+        }
+
+
+        const contexto =
+            canvas.getContext("2d");
+
+
+        canvas.width =
+            video.videoWidth || 640;
+
+        canvas.height =
+            video.videoHeight || 480;
+
+
+        /*
+        Volteamos el canvas para guardar
+        la misma orientación que ve el usuario.
+        */
+
+        contexto.save();
+
+        contexto.translate(
+            canvas.width,
+            0
+        );
+
+        contexto.scale(
+            -1,
+            1
+        );
+
+
+        contexto.drawImage(
+            video,
+            0,
+            0,
+            canvas.width,
+            canvas.height
+        );
+
+
+        contexto.restore();
+
+
+        canvas.toBlob(
+            blob => {
+
+
+                if (!blob) {
+
+                    estadoCamara.textContent =
+                        "No se pudo capturar la fotografía.";
+
+                    return;
+
+                }
+
+
+                fotoBlob = blob;
+
+
+                const urlFoto =
+                    URL.createObjectURL(blob);
+
+
+                fotoPreview.src =
+                    urlFoto;
+
+
+                video.style.display =
+                    "none";
+
+
+                fotoPreview.style.display =
+                    "block";
+
+
+                estadoCamara.textContent =
+                    "Fotografía capturada correctamente.";
+
+
+                estadoCamara.className =
+                    "estado-camara correcto";
+
+
+                btnCapturar.innerHTML =
+                    '<i class="fa-solid fa-rotate"></i> Volver a capturar';
+
+
+                video.style.display =
+                    "none";
+
+
+            },
+
+            "image/jpeg",
+
+            0.92
+
+        );
+
+    }
+);
+
+
+
+/* ==================================
+       VOLVER A MOSTRAR CÁMARA
+================================== */
+
+
+btnCapturar.addEventListener(
+    "click",
+    () => {
+
+        if (
+            fotoBlob &&
+            fotoPreview.style.display === "block"
+        ) {
+
+            setTimeout(() => {
+
+                video.style.display = "block";
+
+            }, 100);
+
+        }
+
+    }
+);
+
+
+
+/* ==================================
+        ENVIAR REGISTRO
+================================== */
+
+
+form.addEventListener(
+    "submit",
+    async event => {
+
+
+        event.preventDefault();
+
+
+        mensaje.className = "";
+
+        mensaje.style.display = "none";
+
+
+        const clave =
+            document.getElementById("clave").value;
+
+
+        const confirmar =
+            document.getElementById("confirmar").value;
+
+
+        if (clave !== confirmar) {
+
+            mostrarError(
+                "Las contraseñas no coinciden."
+            );
+
+            return;
+
+        }
+
+
+        if (!fotoBlob) {
+
+            mostrarError(
+                "Debes capturar tu rostro antes de registrarte."
+            );
+
+            return;
+
+        }
+
+
+        const datos =
+            new FormData();
+
+
+        datos.append(
+            "nombre",
+            document.getElementById("nombre").value
+        );
+
+
+        datos.append(
+            "apellido",
+            document.getElementById("apellido").value
+        );
+
+
+        datos.append(
+            "correo",
+            document.getElementById("correo").value
+        );
+
+
+        datos.append(
+            "telefono",
+            "+56" +
+            document.getElementById("telefono").value
+        );
+
+
+        datos.append(
+            "clave",
+            clave
+        );
+
+
+        datos.append(
+            "foto",
+            fotoBlob,
+            "rostro.jpg"
+        );
+
+
+        btnRegistrar.disabled = true;
+
+
+        btnRegistrar.innerHTML =
+            '<i class="fa-solid fa-spinner fa-spin"></i> Registrando...';
+
+
+        try {
+
+
+            /*
+            Mientras desarrollas FastAPI localmente:
+            */
+
+            const respuesta =
+                await fetch(
+                    "http://127.0.0.1:8000/registro",
+                    {
+
+                        method: "POST",
+
+                        body: datos
+
+                    }
+                );
+
+
+            const resultado =
+                await respuesta.json();
+
+
+            if (!respuesta.ok) {
+
+                mostrarError(
+                    resultado.detail ||
+                    resultado.mensaje ||
+                    "No fue posible completar el registro."
+                );
+
+                return;
+
+            }
+
+
+            mensaje.textContent =
+                resultado.mensaje ||
+                "Usuario registrado correctamente.";
+
+
+            mensaje.className =
+                "exito";
+
+
+            form.reset();
+
+
+            fotoBlob = null;
+
+
+            fotoPreview.style.display =
+                "none";
+
+
+            video.style.display =
+                "block";
+
+
+            detenerCamara();
+
+
+        }
+
+        catch(error) {
+
+
+            console.error(error);
+
+
+            mostrarError(
+                "No se pudo conectar con el servidor FastAPI."
+            );
+
+
+        }
+
+        finally {
+
+
+            btnRegistrar.disabled = false;
+
+
+            btnRegistrar.innerHTML =
+                '<i class="fa-solid fa-user-plus"></i> Registrarse';
+
+
+        }
+
+
+    }
+);
+
+
+
+/* ==================================
+              ERROR
+================================== */
+
+
+function mostrarError(texto) {
+
+
+    mensaje.textContent =
+        texto;
+
+
+    mensaje.className =
+        "error";
+
+
+}
+
+
+
+/* ==================================
+          DETENER CÁMARA
+================================== */
+
+
+function detenerCamara() {
+
+
+    if (stream) {
+
+
+        stream
+            .getTracks()
+            .forEach(
+                track => track.stop()
+            );
+
+
+        stream = null;
+
+
+    }
+
+
+    btnCapturar.disabled =
+        true;
+
+
+    estadoCamara.textContent =
+        "Cámara desactivada";
+
+
+    estadoCamara.className =
+        "estado-camara";
+
+
+}
+
+
+
+/* ==================================
+       CERRAR AL SALIR
+================================== */
+
+
+window.addEventListener(
+    "beforeunload",
+    detenerCamara
+);
+
+
+</script>
+
+
 </body>
+
 </html>
