@@ -886,23 +886,12 @@ header{
     margin: 50px auto 0;
 
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 40px;
 }
 
-/* Cada tarjeta ocupa 2 columnas = 3 tarjetas arriba */
 .contenedor-equipo .miembro {
-    grid-column: span 2;
-}
-
-/* Felipe: segunda fila, centrado hacia la izquierda */
-.contenedor-equipo .miembro:nth-child(4) {
-    grid-column: 2 / span 2;
-}
-
-/* Benjamín: segunda fila, centrado hacia la derecha */
-.contenedor-equipo .miembro:nth-child(5) {
-    grid-column: 4 / span 2;
+    width: 100%;
 }
 
 .miembro{
