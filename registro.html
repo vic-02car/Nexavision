@@ -198,6 +198,43 @@
             color: #8f9cac;
 
         }
+        .password-box {
+            position: relative;
+            width: 100%;
+        }
+
+        .password-box input {
+            width: 100%;
+            padding-right: 50px;
+        }
+
+        .password-box .ver-password {
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+
+            width: 40px;
+            height: 40px;
+            padding: 0;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: transparent;
+            border: none;
+            color: #00C853;
+            border-radius: 50%;
+
+            cursor: pointer;
+        }
+
+        .password-box .ver-password:hover {
+            background: transparent;
+            color: white;
+            transform: translateY(-50%);
+        }
 
 
         /* =========================
@@ -691,41 +728,61 @@
         <div class="campo">
 
             <label for="clave">
-
                 Contraseña
-
             </label>
 
-            <input
-                id="clave"
-                type="password"
-                name="clave"
-                placeholder="Contraseña"
-                minlength="6"
-                required
-            >
+            <div class="password-box">
+
+                <input
+                    id="clave"
+                    type="password"
+                    name="clave"
+                    placeholder="Contraseña"
+                    minlength="6"
+                    required
+                >
+
+                <button
+                    type="button"
+                    class="ver-password"
+                    onclick="verPassword('clave', this)"
+                >
+                    <i class="fa-solid fa-eye"></i>
+                </button>
+
+            </div>
 
         </div>
 
 
-        <!-- CONFIRMAR -->
+        <!-- CONFIRMAR CONTRASEÑA -->
 
         <div class="campo">
 
             <label for="confirmar">
-
                 Confirmar contraseña
-
             </label>
 
-            <input
-                id="confirmar"
-                type="password"
-                name="confirmar"
-                placeholder="Repite tu contraseña"
-                minlength="6"
-                required
-            >
+            <div class="password-box">
+
+                <input
+                    id="confirmar"
+                    type="password"
+                    name="confirmar"
+                    placeholder="Repite tu contraseña"
+                    minlength="6"
+                    required
+                >
+
+                <button
+                    type="button"
+                    class="ver-password"
+                    onclick="verPassword('confirmar', this)"
+                >
+                    <i class="fa-solid fa-eye"></i>
+                </button>
+
+            </div>
 
         </div>
 
@@ -1327,6 +1384,27 @@ form.addEventListener(
 /* ==================================
               ERROR
 ================================== */
+function verPassword(id, boton) {
+
+    const input = document.getElementById(id);
+    const icono = boton.querySelector("i");
+
+    if (input.type === "password") {
+
+        input.type = "text";
+
+        icono.classList.remove("fa-eye");
+        icono.classList.add("fa-eye-slash");
+
+    } else {
+
+        input.type = "password";
+
+        icono.classList.remove("fa-eye-slash");
+        icono.classList.add("fa-eye");
+
+    }
+}
 
 
 function mostrarError(texto) {
