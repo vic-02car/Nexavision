@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Iniciar Sesión | NexaVision</title>
+
+    <link rel="stylesheet" href="css/estilos1.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <style>
+
+        *{
+            box-sizing:border-box;
+        }
+
+        body{
+
+            margin:0;
+
+            min-height:100vh;
+
+            display:flex;
+
+            justify-content:center;
+
+            align-items:center;
+
+            padding:30px 15px;
+
+            font-family:'Poppins',sans-serif;
+
+            background:
+            radial-gradient(circle at top,#2563EB22,transparent 35%),
+            radial-gradient(circle at bottom,#00C85322,transparent 35%),
+            #0A2540;
+
+            color:white;
+
+        }
+
+
+        /* =========================
+                CONTENEDOR
+        ========================= */
+
+        .login-contenedor{
+
+            width:100%;
+
+            max-width:460px;
+
+            background:rgba(255,255,255,.05);
+
+            border:1px solid rgba(255,255,255,.08);
+
+            backdrop-filter:blur(15px);
+
+            border-radius:25px;
+
+            padding:45px 40px;
+
+            box-shadow:
+            0 20px 60px rgba(0,0,0,.30);
+
+        }
+
+
+        /* =========================
+                   LOGO
+        ========================= */
+
+        .logo-login{
+
+            width:110px;
+
+            display:block;
+
+            margin:0 auto 20px;
+
+        }
+
+
+        .login-contenedor h2{
+
+            text-align:center;
+
+            color:#00C853;
+
+            margin-bottom:8px;
+
+            font-size:30px;
+
+        }
+
+
+        .descripcion{
+
+            text-align:center;
+
+            color:#b9c3ce;
+
+            font-size:14px;
+
+            margin-bottom:35px;
+
+        }
+
+
+        /* =========================
+                 CAMPOS
+        ========================= */
+
+        .campo{
+
+            margin-bottom:20px;
+
+        }
+
+
+        .campo label{
+
+            display:block;
+
+            margin-bottom:8px;
+
+            color:#d5dce4;
+
+            font-size:14px;
+
+        }
+
+
+        .input-contenedor{
+
+            position:relative;
+
+        }
+
+
+        .input-contenedor i{
+
+            position:absolute;
+
+            left:16px;
+
+            top:50%;
+
+            transform:translateY(-50%);
+
+            color:#00C853;
+
+        }
+
+
+        .input-contenedor input{
+
+            width:100%;
+
+            padding:15px 45px;
+
+            background:#132c47;
+
+            border:1px solid transparent;
+
+            border-radius:12px;
+
+            outline:none;
+
+            color:white;
+
+            font-family:inherit;
+
+            font-size:15px;
+
+            transition:.3s;
+
+        }
+
+
+        .input-contenedor input:focus{
+
+            border-color:#00C853;
+
+            box-shadow:
+            0 0 0 3px rgba(0,200,83,.12);
+
+        }
+
+
+        .input-contenedor input::placeholder{
+
+            color:#8190a0;
+
+        }
+
+
+        /* =========================
+             MOSTRAR CONTRASEÑA
+        ========================= */
+
+        .ver-clave{
+
+            position:absolute !important;
+
+            right:16px;
+
+            left:auto !important;
+
+            cursor:pointer;
+
+            color:#aab5c0 !important;
+
+        }
+
+
+        .ver-clave:hover{
+
+            color:#00C853 !important;
+
+        }
+
+
+        /* =========================
+             OPCIONES LOGIN
+        ========================= */
+
+        .opciones{
+
+            display:flex;
+
+            justify-content:space-between;
+
+            align-items:center;
+
+            margin:5px 0 25px;
+
+            gap:15px;
+
+            font-size:13px;
+
+        }
+
+
+        .recordar{
+
+            display:flex;
+
+            align-items:center;
+
+            gap:7px;
+
+            color:#bdc7d1;
+
+        }
+
+
+        .recordar input{
+
+            accent-color:#00C853;
+
+        }
+
+
+        .opciones a{
+
+            color:#00C853;
+
+            text-decoration:none;
+
+        }
+
+
+        .opciones a:hover{
+
+            text-decoration:underline;
+
+        }
+
+
+        /* =========================
+                   BOTÓN
+        ========================= */
+
+        .btn-login{
+
+            width:100%;
+
+            padding:15px;
+
+            border:none;
+
+            border-radius:50px;
+
+            background:#00C853;
+
+            color:white;
+
+            font-family:inherit;
+
+            font-size:16px;
+
+            font-weight:600;
+
+            cursor:pointer;
+
+            transition:.3s;
+
+        }
+
+
+        .btn-login:hover{
+
+            background:#2563EB;
+
+            transform:translateY(-2px);
+
+        }
+
+
+        .btn-login:disabled{
+
+            opacity:.6;
+
+            cursor:not-allowed;
+
+            transform:none;
+
+        }
+
+
+        /* =========================
+                  MENSAJE
+        ========================= */
+
+        #mensaje{
+
+            display:none;
+
+            margin-top:20px;
+
+            padding:13px;
+
+            border-radius:10px;
+
+            text-align:center;
+
+            font-size:14px;
+
+        }
+
+
+        #mensaje.error{
+
+            display:block;
+
+            border:1px solid #ff5b5b;
+
+            background:rgba(255,91,91,.12);
+
+            color:#ff9d9d;
+
+        }
+
+
+        #mensaje.exito{
+
+            display:block;
+
+            border:1px solid #00C853;
+
+            background:rgba(0,200,83,.12);
+
+            color:#74ee9d;
+
+        }
+
+
+        /* =========================
+                REGISTRARSE
+        ========================= */
+
+        .registro-link{
+
+            margin-top:28px;
+
+            text-align:center;
+
+            color:#bdc7d1;
+
+            font-size:14px;
+
+        }
+
+
+        .registro-link a{
+
+            color:#00C853;
+
+            text-decoration:none;
+
+            font-weight:500;
+
+        }
+
+
+        .volver{
+
+            display:block;
+
+            text-align:center;
+
+            margin-top:18px;
+
+            color:#8998a8;
+
+            text-decoration:none;
+
+            font-size:13px;
+
+        }
+
+
+        /* =========================
+                 RESPONSIVE
+        ========================= */
+
+        @media(max-width:500px){
+
+            .login-contenedor{
+
+                padding:35px 22px;
+
+            }
+
+            .opciones{
+
+                flex-direction:column;
+
+                align-items:flex-start;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="login-contenedor">
+
+
+    <img
+        src="logo2.png"
+        alt="NexaVision"
+        class="logo-login"
+    >
+
+
+    <h2>Iniciar Sesión</h2>
+
+
+    <p class="descripcion">
+
+        Ingresa tus credenciales para acceder
+        a la plataforma NexaVision.
+
+    </p>
+
+
+    <form id="formLogin">
+
+
+        <div class="campo">
+
+            <label for="correo">
+
+                Correo electrónico
+
+            </label>
+
+
+            <div class="input-contenedor">
+
+                <i class="fa-solid fa-envelope"></i>
+
+
+                <input
+                    type="email"
+                    id="correo"
+                    name="correo"
+                    placeholder="correo@ejemplo.com"
+                    required
+                >
+
+            </div>
+
+        </div>
+
+
+        <div class="campo">
+
+            <label for="clave">
+
+                Contraseña
+
+            </label>
+
+
+            <div class="input-contenedor">
+
+                <i class="fa-solid fa-lock"></i>
+
+
+                <input
+                    type="password"
+                    id="clave"
+                    name="clave"
+                    placeholder="Contraseña"
+                    required
+                >
+
+
+                <i
+                    class="fa-solid fa-eye ver-clave"
+                    id="verClave"
+                ></i>
+
+            </div>
+
+        </div>
+
+
+        <div class="opciones">
+
+
+            <label class="recordar">
+
+                <input
+                    type="checkbox"
+                    id="recordar"
+                >
+
+                Recordarme
+
+            </label>
+
+
+            <a href="#">
+
+                ¿Olvidaste tu contraseña?
+
+            </a>
+
+
+        </div>
+
+
+        <button
+            type="submit"
+            class="btn-login"
+            id="btnLogin"
+        >
+
+            <i class="fa-solid fa-right-to-bracket"></i>
+
+            Iniciar sesión
+
+        </button>
+
+
+        <div id="mensaje"></div>
+
+
+    </form>
+
+
+    <div class="registro-link">
+
+        ¿No tienes una cuenta?
+
+        <a href="registro.html">
+
+            Registrarse
+
+        </a>
+
+    </div>
+
+
+    <a
+        href="index.html"
+        class="volver"
+    >
+
+        ← Volver a NexaVision
+
+    </a>
+
+
+</div>
+
+
+
+<script>
+
+
+/* ===========================
+      MOSTRAR CONTRASEÑA
+=========================== */
+
+const verClave =
+    document.getElementById("verClave");
+
+const clave =
+    document.getElementById("clave");
+
+
+verClave.addEventListener(
+    "click",
+    () => {
+
+
+        if(clave.type === "password"){
+
+            clave.type = "text";
+
+            verClave.classList.remove("fa-eye");
+
+            verClave.classList.add("fa-eye-slash");
+
+        }
+
+        else{
+
+            clave.type = "password";
+
+            verClave.classList.remove("fa-eye-slash");
+
+            verClave.classList.add("fa-eye");
+
+        }
+
+
+    }
+);
+
+
+
+/* ===========================
+           LOGIN
+=========================== */
+
+const formLogin =
+    document.getElementById("formLogin");
+
+const mensaje =
+    document.getElementById("mensaje");
+
+const btnLogin =
+    document.getElementById("btnLogin");
+
+
+formLogin.addEventListener(
+    "submit",
+    async (event) => {
+
+
+        event.preventDefault();
+
+
+        mensaje.className = "";
+
+        mensaje.style.display = "none";
+
+
+        const correo =
+            document.getElementById("correo").value;
+
+
+        const claveUsuario =
+            document.getElementById("clave").value;
+
+
+        const datos =
+            new FormData();
+
+
+        datos.append(
+            "correo",
+            correo
+        );
+
+
+        datos.append(
+            "clave",
+            claveUsuario
+        );
+
+
+        btnLogin.disabled = true;
+
+
+        btnLogin.innerHTML =
+            '<i class="fa-solid fa-spinner fa-spin"></i> Verificando...';
+
+
+        try{
+
+
+            const respuesta =
+                await fetch(
+                    "http://127.0.0.1:8000/login",
+                    {
+
+                        method:"POST",
+
+                        body:datos
+
+                    }
+                );
+
+
+            const resultado =
+                await respuesta.json();
+
+
+            if(!respuesta.ok){
+
+                mostrarError(
+
+                    resultado.detail ||
+
+                    resultado.mensaje ||
+
+                    "Correo o contraseña incorrectos."
+
+                );
+
+                return;
+
+            }
+
+
+            mensaje.textContent =
+                "Inicio de sesión correcto.";
+
+
+            mensaje.className =
+                "exito";
+
+
+            /*
+            Después puedes redirigir
+            al panel principal.
+            */
+
+            setTimeout(
+                () => {
+
+                    window.location.href =
+                        "panel.html";
+
+                },
+
+                1000
+            );
+
+
+        }
+
+        catch(error){
+
+
+            console.error(error);
+
+
+            mostrarError(
+                "No se pudo conectar con el servidor."
+            );
+
+
+        }
+
+        finally{
+
+
+            btnLogin.disabled = false;
+
+
+            btnLogin.innerHTML =
+                '<i class="fa-solid fa-right-to-bracket"></i> Iniciar sesión';
+
+
+        }
+
+
+    }
+);
+
+
+
+function mostrarError(texto){
+
+
+    mensaje.textContent =
+        texto;
+
+
+    mensaje.className =
+        "error";
+
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
+```
